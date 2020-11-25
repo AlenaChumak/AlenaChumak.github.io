@@ -1,0 +1,75 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  background-image: url("images/patt.png");
+}
+
+.header {
+  padding: 25px 0;
+  background-color: rgba(255, 255, 255, 0.75);
+}
+
+.container {
+  width: 1200px;
+  margin: 0 auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.row {
+  margin-right: -15px;
+  margin-left: -15px;
+}
+
+.row:after,
+.menu:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+[class*="col-"] {
+  float: left;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.col-md-3 {
+  width: 25%;
+}
+
+.col-md-6 {
+  width: 50%;
+}
+
+.logo {
+  margin-top: 8px;
+}
+
+.menu li {
+  width: 25%;
+  float: left;
+  border-left: 1px solid #2c71b8;
+}
+
+.menu li:last-child {
+  border-right: 1px solid #2c71b8;
+}
+
+.menu a {
+  text-decoration: none;
+  display: block;
+  height: 50px;
+  text-align: center;
+  line-height: 50px;
+  color: #2c71b8;
+  font-size: 21px;
+}
+
+.menu a:hover {
+  color: white;
+  background-color: #2c71b8;
+}
