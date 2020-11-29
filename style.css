@@ -70,6 +70,16 @@ body {
   font-size: 21px;
 }
 
+.products {
+  position: relative;
+}
+
+.fa {
+  right: 7%;
+  top: 31%;
+  position: absolute;
+}
+
 .menu a:hover {
   color: white;
   background-color: #2c71b8;
