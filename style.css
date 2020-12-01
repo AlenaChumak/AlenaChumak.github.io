@@ -77,8 +77,8 @@ body {
 }
 
 .fa {
-  right: 6%;
-  top: 4%;
+  right: 7%;
+  top: 30%;
   position: absolute;
 }
 
@@ -92,9 +92,10 @@ body {
 }
 
 .submenu {
-  /* display: none; */
+  margin-left: -1px;
+  display: none;
   padding: 25px 0;
-  width: 200%;
+  width: 202%;
   background-color: #2c71b8;
 }
 
@@ -106,6 +107,22 @@ body {
   font-size: 21px;
   color: white;
   float: none;
+  cursor: pointer;
+}
+
+.products:hover ul {
+  position: absolute;
+  display: block;
+}
+
+.menu > .products:hover > a {
+  background-color: #2c71b8;
+  color: white;
+}
+
+.submenu > li:hover {
+  color: #2c71b8;
+  background-color: white;
 }
 
 ::placeholder {
