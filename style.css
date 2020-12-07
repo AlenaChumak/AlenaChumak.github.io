@@ -152,7 +152,7 @@ form {
 }
 
 input,
-button {
+.search-submit {
   border: none;
   outline: none;
 }
@@ -171,7 +171,7 @@ input {
   color: #2c71b8;
 }
 
-button {
+.search-submit {
   height: 30px;
   width: 30px;
   top: 5px;
@@ -207,9 +207,7 @@ button {
 /* SLIDESHOW  */
 
 .slideshow-container {
-  width: 1200px;
   height: 400px;
-  border: 1px solid #1f5081;
   margin: 0 auto;
   padding-left: 15px;
   padding-right: 15px;
@@ -222,8 +220,8 @@ button {
   width: 25%;
   padding-left: 15px;
   padding-right: 15px;
-  background-image: linear-gradient(rgba(44, 113, 184, 0.78), rgba(44, 113, 184, 0.78));
-  border: 1px solid #1f5081;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-right: 1px solid white;
   height: 845px;
 }
 
@@ -233,30 +231,25 @@ button {
   float: left;
 }
 
-main {
+.main-container {
   width: 1200px;
   margin: 0 auto;
   padding-left: 15px;
   padding-right: 15px;
 }
-main::after {
+
+.main-container::after {
   content: "";
   display: block;
   clear: both;
 }
 
-.main-container {
-  margin-right: -15px;
-  margin-left: -15px;
-}
-
 .container-articl {
   width: 75%;
-  background-image: linear-gradient(rgba(44, 113, 184, 0.78), rgba(44, 113, 184, 0.78));
-  border: 1px solid #1f5081;
-  height: 2000px;
 }
+
 .title {
+  width: 100%;
   color: #96b8dc;
   font-size: 14px;
   height: 65px;
@@ -264,6 +257,171 @@ main::after {
   padding: 0 15px;
 }
 
-[class*="col-3"] {
-  width: 25%;
+.title > a {
+  text-decoration: none;
+  color: #96b8dc;
+}
+
+.articl-row {
+  height: 100px;
+}
+
+.articl-title {
+  width: 70%;
+  padding: 0 15px;
+  line-height: 100px;
+}
+
+.articl-select {
+  line-height: 100px;
+  width: 30%;
+  padding: 0 15px;
+}
+
+h2 {
+  font-size: 48px;
+  color: white;
+  font-weight: bold;
+}
+
+.description {
+  width: 100%;
+}
+
+[class*="description-"] {
+  padding: 15px;
+  display: inline-block;
+  width: calc(30% - 3px);
+  border: 1px solid white;
+}
+
+.section-img {
+  position: relative;
+  display: block;
+  height: 180px;
+  margin: -15px;
+  background-color: rgba(255, 255, 255, 0.75);
+  border: 1px solid white;
+}
+
+.img-desktop {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.img-square {
+  top: 10px;
+  right: 10px;
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  border: 1px solid #2c72ba;
+}
+
+.img-square:hover,
+.img-heart:hover {
+  background-color: #2c71b8;
+}
+
+.img-square:hover .fas,
+.img-heart:hover .far {
+  color: white;
+}
+
+.img-square > .fas,
+.img-heart > .far {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #2c72ba;
+}
+
+.img-heart {
+  width: 30px;
+  height: 30px;
+  border: 1px solid #2c72ba;
+  top: 50px;
+  right: 10px;
+  position: absolute;
+}
+
+[class*="description-md-3-"] {
+  color: white;
+  margin: 15px;
+  background-color: rgba(44, 113, 184, 0.75);
+}
+
+.device-name {
+  font-size: 30px;
+  font-weight: bold;
+  margin-top: 30px;
+}
+
+.section-description {
+  font-size: 21px;
+  margin: 15px 0;
+}
+
+.price {
+  font-size: 48px;
+  font-weight: bold;
+  text-align: center;
+  padding: 15px;
+}
+
+sup {
+  vertical-align: super;
+  font-size: 50%;
+}
+
+.btn-one-description {
+  text-align: center;
+  background-color: rgb(44, 113, 184);
+  border: 1px solid white;
+  height: 50px;
+  margin: 15px;
+}
+
+.btn-one-description > button {
+  text-transform: uppercase;
+  font-size: 21px;
+  font-weight: bold;
+  color: white;
+  background: transparent;
+  border: none;
+  height: 50px;
+}
+
+.btn-two-description {
+  text-align: center;
+  background-color: rgb(44, 113, 184);
+  border: 1px solid white;
+  height: 50px;
+  margin: 15px;
+}
+
+.btn-two-description > button {
+  text-transform: uppercase;
+  font-size: 21px;
+  font-weight: bold;
+  color: white;
+  background: transparent;
+  border: none;
+  height: 50px;
+}
+
+.btn-two-description:hover {
+  background-color: rgba(255, 255, 255, 0.19);
+}
+
+.btn-two-description > button > .fas {
+  margin-left: 10px;
+}
+
+button:active,
+button:focus {
+  outline: none;
 }
