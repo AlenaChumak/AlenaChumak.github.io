@@ -377,18 +377,20 @@ h2 {
   border: 1px solid #2c72ba;
 }
 
+.liked,
 .img-square:hover,
 .img-heart:hover {
   background-color: #2c71b8;
 }
 
+.liked > .far,
 .img-square:hover .fas,
 .img-heart:hover .far {
   color: white;
 }
 
-.img-square > .fas,
-.img-heart > .far {
+.img-square > i,
+.img-heart > i {
   position: absolute;
   top: 50%;
   left: 50%;
