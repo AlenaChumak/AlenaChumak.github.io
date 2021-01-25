@@ -64,12 +64,41 @@ likeButtons.forEach((btn) => {
 		this.classList.toggle("liked")
 	})
 
-
-	// btn.addEventListener("click", function () {
-	// 	if (this.classList.contains("liked")) {
-	// 		this.classList.remove("liked")
-	// 	} else {
-	// 		this.classList.add("liked")
-	// 	}
-	
 })
+
+// change product count
+
+let decrementBtns = document.querySelectorAll(".decrement-button")[0];
+let incrementBtns = document.querySelectorAll(".increment-button")[0];
+let quantityValue = document.querySelectorAll(".product-quantity input")[0];
+let currentCount = +quantityValue.value;
+let minCount = 1;
+let maxCount = 5;
+
+
+function toggleButtonState(count) {
+	decrementBtns.disabled = count <= minCount;
+	incrementBtns.disabled = count >= maxCount;	
+}
+
+toggleButtonState(currentCount);
+
+
+incrementBtns.addEventListener("click", function () {
+	let currentCount = +quantityValue.value;
+	let nexCount = currentCount + 1;
+	quantityValue.value = nexCount;
+
+	 toggleButtonState(nexCount)
+})
+
+decrementBtns.addEventListener("click", function () {
+	let currentCount = +quantityValue.value;
+	let nexCount = currentCount - 1;
+	quantityValue.value = nexCount;
+
+	toggleButtonState(nexCount)
+
+})
+
+
