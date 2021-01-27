@@ -531,9 +531,9 @@ button:focus {
   text-align: center;
 }
 
-.product-quantity button {
+/* .product-quantity button {
   padding: 3px 8px;
-}
+} */
 
 .slideshow-container {
   display: flex;
