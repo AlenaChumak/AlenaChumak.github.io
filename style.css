@@ -204,8 +204,6 @@ body {
 .slideshow-container {
   height: 400px;
   margin: 0 auto;
-  padding-left: 15px;
-  padding-right: 15px;
   background-image: linear-gradient(rgba(44, 113, 184, 0.78), rgba(44, 113, 184, 0.78));
 }
 
@@ -535,4 +533,105 @@ button:focus {
 
 .product-quantity button {
   padding: 3px 8px;
+}
+
+.slideshow-container {
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+
+.slideshow-container > div {
+  font-size: 100px;
+  letter-spacing: 10px;
+  color: #ffffff;
+  font-family: "Roboto", sans-serif;
+}
+
+.slick-dots {
+  bottom: 30px;
+}
+
+.slick-dots li button:before {
+  font-family: "slick";
+  font-size: 0;
+  position: absolute;
+  padding: 0;
+  top: 0;
+  left: 0;
+  width: 0px;
+  height: 0px;
+  content: "";
+  text-align: center;
+  opacity: 0.25;
+}
+.slick-dots li {
+  position: relative;
+  border: 1px solid white;
+  border: none;
+  display: inline-block;
+  margin: 0 5px;
+  padding: 0;
+  cursor: pointer;
+}
+
+.slick-dots li button:hover,
+.slick-dots li button:focus {
+  outline: none;
+  background: white;
+}
+
+.slick-dots li button {
+  width: 8px;
+  height: 8px;
+  padding: 4px;
+  border: 1px solid white;
+}
+
+.slick-dotted.slick-slider {
+  margin-bottom: 0px;
+}
+
+/* .fa {
+  font-size: 60px;
+  color: white;
+  right: 0;
+  top: 0;
+  position: relative;
+} */
+
+.slick-prev {
+  left: 0px;
+  /* top: 0; */
+}
+
+.slick-next {
+  right: 0px;
+  /* top: 0; */
+}
+
+.slick-prev,
+.slick-next {
+  font-size: 0;
+  line-height: 0;
+  position: absolute;
+  top: 50%;
+  display: block;
+  width: 30px;
+  height: 50px;
+  padding: 0;
+}
+
+.slick-prev:before {
+  content: "<";
+  font-size: 48px;
+  line-height: 40px;
+  color: #ffffff;
+}
+
+.slick-next:before {
+  content: ">";
+  font-size: 48px;
+  line-height: 40px;
+  color: #ffffff;
 }

@@ -41,17 +41,15 @@ modal.addEventListener("click", function (e) {
 	
 })
 
-function showModalByScroll() {
-	if (window.pageYOffset > document.body.scrollHeight/2) {
-		openModal();
-		window.removeEventListener("scroll",showModalByScroll)
-	}
+// function showModalByScroll() {
+// 	if (window.pageYOffset > document.body.scrollHeight/2) {
+// 		openModal();
+// 		window.removeEventListener("scroll",showModalByScroll)
+// 	}
 	
-}
-window.addEventListener("scroll",showModalByScroll);
+// }
+// window.addEventListener("scroll",showModalByScroll);
 
-// console.log(window.pageYOffset)
-// console.log(document.body.scrollHeight)
 
 
 
@@ -68,37 +66,109 @@ likeButtons.forEach((btn) => {
 
 // change product count
 
-let decrementBtns = document.querySelectorAll(".decrement-button")[0];
-let incrementBtns = document.querySelectorAll(".increment-button")[0];
-let quantityValue = document.querySelectorAll(".product-quantity input")[0];
-let currentCount = +quantityValue.value;
-let minCount = 1;
-let maxCount = 5;
+// let decrementBtns = document.querySelectorAll(".decrement-button");
+// let incrementBtns = document.querySelectorAll(".increment-button");
+// let quantityValue = document.querySelectorAll(".product-quantity input");
 
 
-function toggleButtonState(count) {
-	decrementBtns.disabled = count <= minCount;
-	incrementBtns.disabled = count >= maxCount;	
+// let currentCount = +quantityValue.value;
+// let minCount = 1;
+// let maxCount = 5;
+
+
+// for (let i = 0; i < quantityValue.length; i++){
+// 	let currentCount = +quantityValue[i].value;
+// 	toggleButtonState(currentCount, decrementBtns[i],incrementBtns[i]);
+// }
+
+
+// function toggleButtonState(count,decrementBtn,incrementBtn) {
+// 	decrementBtn.disabled = count <= minCount;
+// 	incrementBtn.disabled = count >= maxCount;	
+// }
+
+
+// for (let i = 0; i < incrementBtns.length; i++){
+// 	incrementBtns[i].addEventListener("click", function () {
+// 	let currentCount = +quantityValue[i].value;
+// 	let nexCount = currentCount + 1;
+// 	quantityValue[i].value = nexCount;
+
+// 	 toggleButtonState(nexCount,decrementBtns[i],incrementBtns[i])
+// 	})
+// }
+
+
+// for (let i = 0; i < decrementBtns.length; i++) {
+// 	decrementBtns[i].addEventListener("click", function () {
+// 		let currentCount = +quantityValue[i].value;
+// 		let nexCount = currentCount - 1;
+// 		quantityValue[i].value = nexCount;
+
+// 		toggleButtonState(nexCount,decrementBtns[i],incrementBtns[i])
+
+// 	})
+// }
+
+
+
+// function constructor change product quantity
+
+let decrementBtns = document.querySelectorAll(".decrement-button");
+let incrementBtns = document.querySelectorAll(".increment-button");
+let quantityValue = document.querySelectorAll(".product-quantity input");
+
+function Counter(incrementBtn, decrementBtn, inputField, minCount = 1, maxCount = 5) {
+	
+	this.domRefs = {
+		incrementBtn,
+		decrementBtn,
+		inputField,
+	}
+
+	this.toggleButtonState = function () {
+		let count = this.domRefs.inputField.value;
+		this.domRefs.decrementBtn.disabled = count <= minCount;
+		this.domRefs.incrementBtn.disabled = count >= maxCount;	
+	}	
+
+	this.toggleButtonState();
+
+	this.increment = function () {
+		console.log(this)
+		let currentCount = +this.domRefs.inputField.value;
+		let nexCount = currentCount + 1;
+		this.domRefs.inputField.value = nexCount;
+
+		this.toggleButtonState()
+	}
+
+
+	this.decrement = function () {
+		console.log(this)
+		let currentCount = +this.domRefs.inputField.value;
+		let nexCount = currentCount - 1;
+		this.domRefs.inputField.value = nexCount;
+
+		this.toggleButtonState()
+	}
+
+
+	this.domRefs.incrementBtn.addEventListener("click", this.increment.bind(this));
+	this.domRefs.decrementBtn.addEventListener("click", this.decrement.bind(this));
+
+	console.log(this)
 }
 
-toggleButtonState(currentCount);
+const counter = new Counter(incrementBtns[0],decrementBtns[0], quantityValue[0]);
+// const counter1 = new Counter(incrementBtns[1],decrementBtns[1], quantityValue[1]);
 
 
-incrementBtns.addEventListener("click", function () {
-	let currentCount = +quantityValue.value;
-	let nexCount = currentCount + 1;
-	quantityValue.value = nexCount;
+// SLIDER SLICK
 
-	 toggleButtonState(nexCount)
-})
-
-decrementBtns.addEventListener("click", function () {
-	let currentCount = +quantityValue.value;
-	let nexCount = currentCount - 1;
-	quantityValue.value = nexCount;
-
-	toggleButtonState(nexCount)
-
-})
-
-
+$(".slideshow-container").slick({
+	dots: true,
+	// nextArrow: '<i class="fa fa-angle-right"></i>',
+        // prevArrow: '<i class="fa fa-angle-left"></i>',
+	
+});
